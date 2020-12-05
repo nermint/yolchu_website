@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create website">
+    <meta name="keywords" content="Html,Css,Bootstrap,Javascript">
+    <meta name="author" content="Narmin Talibova">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- google fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+     <!-- for calendar -->
+     <link rel="stylesheet" href="datepicker/datepicker.css">
+    <title>Yolchu.az</title>
+   
+</head>
+<body class="advert-body">
+   
+    
+    <header>
+        <nav class="navbar navbar-expand-md p-md-0">
+         <div class="container">
+            <a class="navbar-brand" href="index.html">
+                  <img src="images/logo.png" alt="logo">
+                </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="menu-icon"><i class="fa fa-bars"></i></span>
+                </button>
+            
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <div class="navbar-side">
+                    <ul>
+                    <li> <a href="login.html" class="btn btn-outline-success login shadow-none">
+                     <i class="fa fa-sign-in"></i> DAXİL OL</a></li>
+                    <li> <a href="register.html" class="btn btn-outline-success shadow-none">
+                     <i class="fa fa-user-plus "></i> QEYDİYYAT</a></li>
+                    <li><a href="advert.html" class="btn btn-outline-success shadow-none" >
+                      <i class="fa fa-plus"></i> Elan ver</a>
+                    </li>
+                    <li><a href="#about" class="btn btn-outline-success shadow-none">
+                     <i class="fa fa-search"></i> Axtarış</a></li>
+                    </ul>
+                </div>
+            </div>
+       </div>
+        </nav>
+      </header>
+
+
+    <hr class="p-0 m-0">
+     <div class="main-side mt-5 mb-2">
+        <div class="container pt-3">
+          <button class="tablink border-none" onclick="openPage('Passenger',this,'#497ABD')" id="defaultOpen">Yolçular</button>
+          <button class="tablink border-none" onclick="openPage('Driver',this,'#497ABD')">Sürücülər</button> 
+          <div id="Passenger" class="tabcontent">
+            <form action="">
+            <div class="row mt-5">
+                <div class="col-6">
+                    <div class="form-group ">
+                        <div class="autocomplete">
+                           <div class="place-date">
+                               <i class="fa fa-map-marker"></i>
+                             </div>
+                            <input id="from" type="text" autocomplete="off" class="form-control" name="where" placeholder="Haradan">
+                          </div>
+                       </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group ">
+                        <div class="autocomplete">
+                           <div class="place-date">
+                               <i class="fa fa-map-marker"></i>
+                             </div>
+                            <input id="to" type="text" autocomplete="off" class="form-control" name="where" placeholder="Haraya">
+                          </div>
+                       </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="place-date">
+                        <i class="fa fa-calendar"></i>
+                 </div>
+                <input type="text" id='datepicker3' class="form-control padding" placeholder="Tarixi seçin" readonly="readonly"/>
+          </div>
+            </div>
+            <div class="row mt-3">
+                    <div class="col-12 col-md-7 mt-3">
+                        <div class="form-group ">
+                        <div class="autocomplete">
+                            <input id="choose-marka" type="text" autocomplete="off" class="form-control" name="model" placeholder="Avtomobil markası">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-5 mt-3">
+                      <select>
+                        <option value="">Avtomobil növü</option>
+                        <option value="">Fərdi</option>
+                        <option value="">Taksi</option>
+                      </select>
+                    </div>
+                     
+                </div>
+                <div class="row mt-4 model-car">
+                    <div class="col-12 text-center">
+                        <span >Avtomobil modelini seçin</span>
+                </div>
+                  <div class="col-12 mt-4">
+                      <div class="image-side text-center">
+                        <img src="images/wel-ic-1.png" alt="suv" class="p-3">
+                        <img src="images/wel-ic-2.png" alt="pickup" class="ml-3 ml-md-5 p-3">
+                        <img src="images/wel-ic-3.png" alt="convertible" class="ml-3 ml-md-5 p-3">
+                        <img src="images/wel-ic-4.png" alt="sedan" class="ml-3 ml-md-5 p-3 mt-3 mt-md-0">
+                        <img src="images/wel-ic-5.png" alt="coupe" class="ml-3 ml-md-5 p-3 mt-3">
+                      </div>
+                  </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="place-date">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <input type="number" min="0" class="form-control padding" placeholder="Neçə nəfərə yer var?">
+              </div>
+              <div class="col-md-6 mt-3 mt-md-0">
+                      <div class="place-date">
+                         <i class="fa fa-money"></i>
+                      </div>
+                      <input type="number" max="10000" class="form-control padding price" placeholder="Qiymət">
+              </div>
+            </div>
+
+           
+         
+              
+                <div class="form-group mt-4">  
+                     <form name="add_name" id="add_name">  
+                          <div class="table-responsive">  
+                               <table class="w-100" id="dynamic_field">  
+                                    <tr>  
+                                         <td><input type="text" name="name[]" placeholder="Yolüstü istirahət yeri" class="form-control name_list bordered w-100" autocomplete="off" /></td>  
+                                         <td><button type="button" name="add" id="add" class="btn btn-success shadow-none w-100">
+                                           <i class="fa fa-plus"></i>
+                                         </button></td>  
+                                    </tr>  
+                               </table>    
+                          </div>  
+                     </form>  
+                </div>  
+             
+              
+             
+          
+            <div class="row mt-4">
+                <div class="col-12 condition col-md-6">
+                  <label for="condition">Şərtləriniz</label>
+                  <div><input type="checkbox"><span>Siqaret çəkəcəm</span> </div>
+                  <div><input type="checkbox"><span>Ev heyvanı götürəcəm</span> </div>
+                  <div><input type="checkbox"><span>Ağır yük götürəcəm</span></div>
+                  
+                </div>
+                <div class="col-12 col-md-6 notes mt-3 mt-md-0">
+                   <textarea name="" placeholder="Qeydləriniz:" rows="5" class="w-100"></textarea>
+                </div>
+               
+              </div>
+              <div class="row mt-4 mb-2 justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-lg">Elan ver</button>
+              </div>
+        </form>
+
+        </div>
+
+
+        <div id="Driver" class="tabcontent">
+          <form action="">
+            <div class="row mt-5">
+                <div class="col-6">
+                  <div class="autocomplete">
+                    <div class="place-date">
+                        <i class="fa fa-map-marker"></i>
+                      </div>
+                     <input id="from-2" type="text" autocomplete="off" class="form-control" name="where" placeholder="Haradan">
+                   </div>
+                </div>
+                <div class="col-6">
+                  <div class="autocomplete">
+                    <div class="place-date">
+                        <i class="fa fa-map-marker"></i>
+                      </div>
+                     <input id="to-2" type="text" autocomplete="off" class="form-control" name="where" placeholder="Haraya">
+                   </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <div class="place-date">
+                        <i class="fa fa-calendar"></i>
+                 </div>
+                <input type="text" id='datepicker4' class="form-control padding" placeholder="Tarixi seçin" readonly="readonly"/>
+              </div>
+            </div>
+
+            <div class="row mt-4 p-3 week">
+              <div class="col-4 col-md-3">
+                <input type="checkbox"><span class="pl-2">B.e.</span>
+               </div>
+               <div class="col-4 col-md-3">
+                  <input type="checkbox"><span class="pl-2">Ç.a.</span>
+                 </div>
+                <div class="col-4 col-md-3">
+                    <input type="checkbox"><span class="pl-2">Ç.</span>
+                 </div>
+                 <div class="col-4 col-md-3">
+                    <input type="checkbox"><span class="pl-2">C.a.</span>
+                  </div>
+                  <div class="col-4 col-md-3">
+                      <input type="checkbox"><span class="pl-2">C.</span>
+                    </div>
+                  <div class="col-4 col-md-3">
+                      <input type="checkbox"><span class="pl-2">Ş.</span>
+                  </div>
+                    <div class="col-4 col-md-3">
+                      <input type="checkbox"><span class="pl-2">B.</span>
+                   </div>
+            </div>
+
+            <!-- end -->
+
+            <div class="row mt-3">
+                    <div class="col-12 col-md-7 mt-3">
+                      <div class="form-group ">
+                        <div class="autocomplete">
+                            <input id="choose-marka-2" type="text" autocomplete="off" class="form-control" name="model" placeholder="Avtomobil markası">
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-5 mt-3">
+                      <select>
+                        <option value="">Avtomobil növü</option>
+                        <option value="">Fərdi</option>
+                        <option value="">Taksi</option>
+                      </select>
+                    </div>
+                     
+                </div>
+                <div class="row mt-4 model-car">
+                    <div class="col-12 text-center">
+                        <span >Avtomobil modelini seçin</span>
+                </div>
+                  <div class="col-12 mt-4">
+                      <div class="image-side text-center">
+                        <img src="images/wel-ic-1.png" alt="suv" class="p-3">
+                        <img src="images/wel-ic-2.png" alt="pickup" class="ml-3 ml-md-5 p-3">
+                        <img src="images/wel-ic-3.png" alt="convertible" class="ml-3 ml-md-5 p-3">
+                        <img src="images/wel-ic-4.png" alt="sedan" class="ml-3 ml-md-5 p-3 mt-3">
+                        <img src="images/wel-ic-5.png" alt="coupe" class="ml-3 ml-md-5 p-3 mt-3">
+                      </div>
+                  </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-md-6">
+                  <div class="place-date">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <input type="number" min="0" class="form-control padding" placeholder="Neçə nəfərə yer var?">
+              </div>
+              <div class="col-md-6 mt-3 mt-md-0">
+                      <div class="place-date">
+                         <i class="fa fa-money"></i>
+                      </div>
+                      <input type="number" class="form-control padding price" placeholder="Qiymət">
+              </div>
+            </div>
+
+            <div class="form-group mt-4">  
+                <form name="add_name" id="add_name">  
+                     <div class="table-responsive">  
+                          <table class="w-100" id="dynamic_field-2">  
+                               <tr>  
+                                    <td><input type="text" name="name[]" placeholder="Yolüstü istirahət yeri" class="form-control name_list bordered w-100" autocomplete="off" /></td>  
+                                    <td><button type="button" name="add" id="add-2" class="btn btn-success shadow-none w-100">
+                                      <i class="fa fa-plus"></i>
+                                    </button></td>  
+                               </tr>  
+                          </table>    
+                     </div>  
+                </form>  
+           </div>  
+
+            
+            
+            <div class="row mt-4">
+                <div class="col-12 condition col-md-6">
+                  <label for="condition">Şərtləriniz</label>
+                  <div><input type="checkbox"><span>Siqaret çəkəcəm</span> </div>
+                  <div><input type="checkbox"><span>Ev heyvanı götürəcəm</span> </div>
+                  <div><input type="checkbox"><span>Ağır yük götürəcəm</span></div>
+                  
+                </div>
+                <div class="col-12 col-md-6 notes mt-3 mt-md-0">
+                   <textarea name="" placeholder="Qeydləriniz:" rows="5" class="w-100"></textarea>
+                </div>
+               
+              </div>
+              <div class="row mt-4 mb-2 justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-lg">Elan ver</button>
+              </div>
+        </form>
+
+        </div>
+
+
+        </div>
+
+    </div> 
+    
+
+
+
+    
+
+
+        <!-- footer-starts -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-9 ml-3 ml-md-0 col-md-4 description">
+                <div class="navbar-brand bottom-logo">
+                    <img src="images/logo_white.png" alt="logo">
+                </div>
+                <div class="description-side">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, excepturi voluptatibus qui sit, dolore Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-8 pt-md-5 pb-3 pb-md-0">
+                  <div class="bottom-nav pb-0">
+                      <ul class="float-md-right">
+                      <li><a href="principle.html">İŞ PRİNSİPİ</a></li>
+                      <li><a href="about.html">HAQQIMIZDA</a></li>
+                      <li><a href="contact.html">ƏLAQƏ</a></li>
+                      <li><a href="#about">AXTARIŞ</a></li>
+                      </ul>
+                  </div> 
+          </div>
+          </div>
+
+          <div class="row pb-3">
+            <div class="col-md-8">
+                <div class="social-icon">
+                    <a href="#" class="round fa fa-facebook"></a>
+                    <a href="#" class="round fa fa-instagram"></a>
+                    <a href="#" class="round fa fa-linkedin"></a>
+                    <a href="#" class="round fa fa-google"></a>
+                    </a> 
+                </div>
+            </div>
+
+            <div class="col-md-4 pt-3 pt-md-0">
+                <div class="all-rights">
+                    &copy; 2019
+                    <span>Yolchu | Powered by <a href="#" target="_blank">Narmin Talibova</a></span>
+              </div>
+            </div>
+          </div>
+      
+
+        </div>
+       
+        
+    
+      </footer>
+      <!-- footer ends -->
+
+      
+    
+
+          <!-- scroll to top -->
+      <a href="#" class="scrollTop">
+        <i class="fa fa-angle-up"></i>
+      </a>
+   
+    <!-- Optional JavaScript -->
+   
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  
+
+     <!-- for calendar -->
+  	<script src="datepicker/datepicker.js"></script>
+    <script src="datepicker/mainpick.js"></script>
+
+    <script src="js/advert.js"></script>
+
+   <script>
+     
+
+  
+   
+   
+   </script>
+</body>
+</html>
